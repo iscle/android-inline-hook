@@ -92,9 +92,9 @@ int shadowhook_init(shadowhook_mode_t mode, bool debuggable) {
     pthread_mutex_unlock(&lock);
   }
 
-  SH_LOG_ALWAYS_SHOW("%s: shadowhook init(mode: %s, debuggable: %s), return: %d, real-init: %s",
-                     shadowhook_get_version(), SHADOWHOOK_MODE_SHARED == mode ? "SHARED" : "UNIQUE",
-                     debuggable ? "true" : "false", shadowhook_init_errno, do_init ? "yes" : "no");
+  SH_LOG_INFO("%s: shadowhook init(mode: %s, debuggable: %s), return: %d, real-init: %s",
+              shadowhook_get_version(), SHADOWHOOK_MODE_SHARED == mode ? "SHARED" : "UNIQUE",
+              debuggable ? "true" : "false", shadowhook_init_errno, do_init ? "yes" : "no");
   SH_ERRNO_SET_RET_ERRNUM(shadowhook_init_errno);
 }
 
